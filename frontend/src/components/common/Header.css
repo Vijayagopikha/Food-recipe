@@ -1,0 +1,104 @@
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensure header takes full viewport height */
+    display: flex;
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
+    color: white;
+    text-align: center;
+}
+.header-title {
+    font-size: 3em; /* Adjust size as needed */
+    color: white;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    margin: 0; /* Remove fixed margins */
+    padding: 0; /* Remove any padding */
+    text-align: center; /* Center the text */
+}
+
+
+/* Additional styling to maintain responsiveness */
+.text-content {
+    display: flex;
+    flex-direction: column; /* Stack title and button vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2.5em; /* Reduce size on smaller screens */
+        letter-spacing: 8px; /* Adjust letter spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 2em; /* Further reduce size on mobile screens */
+        letter-spacing: 5px; /* Further adjust letter spacing */
+    }
+}
+/* Navigation styles */
+.nav-links {
+    position: absolute;
+    top: 35px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10 100px;
+    z-index: 20;
+}
+.company-name {
+    font-size: 1.5em; /* Adjust size as needed */
+    color: white; /* Adjust color as needed */
+    margin-right: 20px; /* Space between company name and HOME link */
+    font-weight: bold; /* Make the company name bold */
+}
+
+/* Optional: Add styling for the left-links container */
+.left-links, .right-links {
+    display: flex; /* Allow children to be on the same line */
+    align-items: center; /* Vertically center the items */
+    gap: 30px; /* Space between items */
+}
+
+.left-links a,
+.right-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Remove the hover color change */
+.left-links a:hover,
+.right-links a:hover {
+    text-decoration: none; /* Keep text decoration none */
+}
+
+/* Single underline effect */
+.left-links a::after,
+.right-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%; /* Full width underline */
+    height: 2px; /* Thickness of the underline */
+    background-color: #ffcc00; /* Color of the underline */
+    left: 0;
+    bottom: -4px; /* Positioning of the underline */
+    transform: scaleX(0); /* Start with a scale of 0 for hidden */
+    transition: transform 0.3s ease; /* Animate the scale change */
+}
+
+.left-links a:hover::after,
+.right-links a:hover::after {
+    transform: scaleX(1); /* Scale to full width on hover */
+}
